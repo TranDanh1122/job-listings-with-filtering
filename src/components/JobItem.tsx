@@ -3,10 +3,10 @@ import clsx from "clsx"
 import Category from "./Category";
 export default function JobItem({ job }: { job: Job }): React.JSX.Element {
     return (
-        <div className={clsx("w-full shadow-md shadow-dark_cyan/50 bg-white flex items-center justify-start gap-6 px-10 py-8 rounded-md", {
+        <div className={clsx("w-full shadow-md shadow-dark_cyan/50 bg-white flex items-center justify-start gap-6 px-10 py-8 rounded-md mb:flex-col mb:justify-start mb:items-start mb:relative", {
             "border-l-4 border-dark_cyan": job.featured
         })}>
-            <img src={job.logo} alt={job.company} className='w-[5.5rem] h-[5.5rem] object-cover rounded-full' />
+            <img src={job.logo} alt={job.company} className='w-[5.5rem] h-[5.5rem] object-cover rounded-full mb:absolute mb:w-12 mb:h-12 mb:top-0 mb:left-8 mb:translate-y-[-50%]' />
             <div className='flex flex-col gap-2'>
                 <div className='text-white flex gap-4 items-center justify-start'>
                     <h3 className='text-dark_cyan font-bold text-[1.125rem]'>{job.company}</h3>

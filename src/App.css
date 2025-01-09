@@ -648,13 +648,13 @@ video {
   width: 100%;
 }
 
-.translate-x-\[-2px\] {
-  --tw-translate-x: -2px;
+.translate-x-\[-5px\] {
+  --tw-translate-x: -5px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-x-\[-5px\] {
-  --tw-translate-x: -5px;
+.translate-y-\[-50\%\] {
+  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -692,6 +692,10 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .rounded-2xl {
@@ -794,6 +798,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -858,6 +867,10 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.\!filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -895,9 +908,62 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 @media (min-width: 0) and (max-width: 767px) {
+  .mb\:absolute {
+    position: absolute;
+  }
+
+  .mb\:relative {
+    position: relative;
+  }
+
+  .mb\:left-0 {
+    left: 0px;
+  }
+
+  .mb\:top-0 {
+    top: 0px;
+  }
+
+  .mb\:left-8 {
+    left: 2rem;
+  }
+
+  .mb\:h-12 {
+    height: 3rem;
+  }
+
+  .mb\:w-12 {
+    width: 3rem;
+  }
+
   .mb\:max-w-none {
     max-width: none;
+  }
+
+  .mb\:translate-y-\[-50\%\] {
+    --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .mb\:flex-col {
+    flex-direction: column;
+  }
+
+  .mb\:items-start {
+    align-items: flex-start;
+  }
+
+  .mb\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .mb\:gap-10 {
+    gap: 2.5rem;
   }
 
   .mb\:bg-\[url\(\.\/assets\/images\/bg-header-mobile\.svg\)\] {
