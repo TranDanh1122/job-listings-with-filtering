@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import React from 'react'
+import { AppContext } from './AppContext'
+import JobItem from './components/JobItem'
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { state, dispatch } = React.useContext(AppContext)
+  const [loading, setLoading] = React.useState<boolean>(true)
+  React.useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetch("./data.json")
+        const data = await response.json() as Job[]
+        dispatch({ type: "INIT", payload: data })
+      } catch (error) {
+        console.log(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadData()
+  }, [])
+  if (loading) return <p>Loading...</p>
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+      <header className='bg-contain bg-top bg-fixed bg-dark_cyan bg-[url(./assets/images/bg-header-desktop.svg)] mb:bg-[url(./assets/images/bg-header-mobile.svg)] w-full h-[150px] bg-no-repeat'></header>
+      <div className='container mb:max-w-none  flex flex-col gap-6 mt-20'>
+        {
+          state.filteredData.map(el => <JobItem key={el.id} job={el} />)
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
